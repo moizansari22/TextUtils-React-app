@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function Navbar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <a className="navbar-brand" href="/">
           {props.title}
         </a>
@@ -32,6 +32,19 @@ export default function Navbar(props) {
               </a>
             </li>
           </ul>
+          <div className="form-check form-switch text-light mx-2">
+            <input
+              className="form-check-input"
+              type="checkbox"
+              id="flexSwitchCheckDefault"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              Enable DarkMode
+            </label>
+          </div>
           <form className="form-inline my-2 my-lg-0">
             <input
               className="form-control mr-sm-2"
@@ -39,15 +52,13 @@ export default function Navbar(props) {
               placeholder="Search"
               aria-label="Search"
             />
-            <button
-              className="btn btn-outline-success my-2 my-sm-0"
-              type="submit"
-            >
+
+            <button className="btn btn-success my-2 my-sm-0" type="submit">
               Search
             </button>
           </form>
         </div>
       </nav>
     </>
-  )
+  );
 }
