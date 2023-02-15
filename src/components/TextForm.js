@@ -8,11 +8,13 @@ export default function TextForm(props) {
   const setOnChangeToUpper = () => {
     let mytext = text.toUpperCase();
     changeText(mytext);
+    props.showAlert("Uppcase Sucessful","success")
   };
 
   const setOnChangeToLower = () => {
     let mytext = text.toLowerCase();
     changeText(mytext);
+    props.showAlert("LowerCase Sucessful","success")
   };
 
   const setOnChangeValue = (event) => {
@@ -21,6 +23,7 @@ export default function TextForm(props) {
 
   const clearScreen = () => {
     changeText("");
+    props.showAlert("Screen Cleared","warning")
   };
 
   return (

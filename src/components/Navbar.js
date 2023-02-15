@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <a className="navbar-brand" href="/">
           {props.title}
         </a>
@@ -22,19 +23,20 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/">
                 Home <span className="sr-only">(current)</span>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" to="/about">
                 Link
-              </a>
+              </Link>
             </li>
           </ul>
-          <div className="form-check form-switch text-light mx-2">
+          <div className="form-check form-switch text-dark mx-2">
             <input
               className="form-check-input"
+              onClick={props.toogleMode}
               type="checkbox"
               id="flexSwitchCheckDefault"
             />
